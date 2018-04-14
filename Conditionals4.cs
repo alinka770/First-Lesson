@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 //Author: Мария Дегтяренко
 //Task: С помощью одной строки кода вывести на экран "Хорошо", если пользоваетль ввёл 1, или "Плохо" - если 0.
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
