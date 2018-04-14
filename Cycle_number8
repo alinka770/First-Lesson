@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ISD_Initiative_Cycle_number8
+{
+    class Program
+    {
+        static public string password = "";
+        static void Main(string[] args)
+        {
+            do
+            {
+                
+                Console.WriteLine("*********************************");
+                Console.WriteLine();
+                Console.Write("Введите пароль: ");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("*********************************");
+                password = Console.ReadLine();
+
+                if (password == "root")
+                {
+                    Console.WriteLine();
+                    Console.Write("Пароль верен !");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.Write("Пароль не верен, попробуйте ещё раз !\n");
+                }
+            }
+            while (true);
+            Console.ReadKey();
+            
+        
+        }
+    }
+}
