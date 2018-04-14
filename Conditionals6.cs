@@ -34,7 +34,7 @@ namespace Conditionals6
 
             catch(Exception)
             {
-                Console.WriteLine(("Input string was not in a correct format."));
+                Console.WriteLine("Input string was not in a correct format.");
             }
             Console.ReadKey();
         }
