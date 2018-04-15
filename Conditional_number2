@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ISD_initiative_Cnditional_number2
+{
+    class Program
+
+    {
+        public static string input;
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите гав или мяу!");
+            input = Console.ReadLine();
+            if (input == "мяу")
+            {
+                Console.WriteLine("Покорми кота!");
+            }
+            else if(input == "гав") Console.WriteLine("Погуляй с собакой!");
+            else Console.WriteLine("Вы ввели неверную исходную строку!");
+            Console.ReadKey();
+        }
+    }
+}
