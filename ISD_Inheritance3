@@ -1,0 +1,106 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+/*
+ * Создать класс Vehicle.
+В теле класса создайте поля: координаты и параметры средств передвижения (цена, скорость, год выпуска).
+Создайте 3 производных класса Plane, Саг и Ship.
+Для класса Plane должна быть определена высота и количество пассажиров.
+Для класса Ship — количество пассажиров и порт приписки.
+Написать программу, которая выводит на экран информацию о каждом средстве передвижения.
+ */
+namespace ISD_inheritence3
+{
+    class Vehicle
+    {
+        static protected double x;
+        static protected double y;
+        static protected double price;
+        static protected double speed;
+        static protected int year;
+        public Vehicle(double x1, double y1, double p, double s, int y2)
+        {
+            x = x1;
+            y = y1;
+            price = p;
+            speed = s;
+            year = y2;
+        }
+
+        public virtual void Show()
+        {
+            Console.WriteLine("Координаты средства: {0}, {1}\nСтоимость: {2}\nСкорость: {3}\nГод: {4}\n",x, y, price, speed, year);
+        }
+
+
+    }
+
+    class Plane: Vehicle
+    {
+        private double height;
+        private int passengers;
+        public Plane(double h, int pas):base(x, y, price, speed, year)
+        {
+            height = h;
+            passengers = pas;
+        }
+        public  override void Show()
+        {
+            base.Show();
+            Console.WriteLine("Высота: {0}\nКОличество пассажиров: {1}\n", height, passengers);
+        }
+    }
+
+    class Ship:Vehicle
+    {
+        private int passen;
+        private string port;
+        public Ship(int passe, string port1):base(x, y, price, speed, year)
+        {
+            passen = passe;
+            port = port1;
+        }
+        public override void Show()
+        {
+            base.Show();
+        Console.WriteLine("Количество пассажиров: {0}\nПорт приписки: {1}\n", passen, port);
+        }
+}
+
+    class Car : Vehicle
+    {
+        public Car():base(x, y, price, speed, year)
+        {
+
+        }
+        public override void Show()
+        {
+            base.Show();
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Vehicle v = new Vehicle(13.5, 100.23, 25550, 100, 1999);
+            Plane plane = new Plane(12, 1000);
+            Console.WriteLine("Информация о самолете: ");
+            plane.Show();
+            Vehicle v1 = new Vehicle(16, 200.123, 32516, 150, 2006);
+            Car car = new ISD_inheritence3.Car();
+            Console.WriteLine("Информация о машине: ");
+            car.Show();
+
+            Vehicle v2 = new Vehicle(190, 123, 6543, 78, 2011);
+            Ship ship = new Ship(12000, "Odessa");
+            
+           
+            Console.WriteLine("Информация о корабле: ");
+            ship.Show();
+            Console.ReadKey();
+        }
+    }
+}
